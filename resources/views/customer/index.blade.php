@@ -6,8 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <span class="pull-left">Vehicle Management</span>
-                    <span class="pull-right"><a href="{{route('vehicleadd')}}">+ Add</a></span>
+                    <span class="pull-left">Customer Management</span>
+                    <span class="pull-right"><a href="{{route('customeradd')}}">+ Add</a></span>
                 </div>
 
                 <div class="card-body">
@@ -15,33 +15,36 @@
                         <thead>
                         <tr>
                             <th>S.No</th>
-                            <th>Customer</th>
-                            <th>Vehicle Number</th>
-                            <th>Vehicle Type</th>
-                            <th>Vehicle GCV</th>
-                            <th>Vehicle Seater</th>
-                            <th>Vehicle Description</th>
+                            <th>Company Name</th>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Mobile</th>
+                            <th>Address</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                         </thead>
 
                         <tbody>
-                            @foreach($vehicles as $index=>$value)
+                            @foreach($companies as $index=>$value)
                             <tr>
                                 <td>{{$index+1}}</td>
-                                <td>{{$value->customer->company_name}}</td>
-                                <td>{{$value->vehicle_no}}</td>
-                                <td>{{$value->vehicle_type}}</td>
-                                <td>{{$value->vehicle_gcv}}</td>
-                                <td>{{$value->vehicle_seater}}</td>
-                                <td>{{$value->vehicle_description}}</td>
+                                <td>{{$value->company_name}}</td>
+                                <td>{{$value->customer_name}}</td>
+                                <td>{{$value->email}}</td>
+                                <td>{{$value->phone}}</td>
+                                <td>{{$value->mobile}}</td>
+                                <td>{{$value->address}}</td>
                                 <td>
                                     @if($value->status==0) <span style="color: Red;">Inactive</span> @else <span style="color: Green;">Active</span> @endif
                                 </td>
                                 <td>
-                                    <a href="{{route('vehicleedit',$value->id)}}" class="">Edit</a>
-                                    {{--<a href="{{route('vehicledelete',$value->id)}}" class="">Delete</a>--}}
+                                    <a href="{{route('customeredit',$value->id)}}" class="">Edit</a>
+
+                                    <a href="{{route('vehicleadd')}}?cid={{$value->id}}" class="">+ Add Vehicle</a>
+
+                                    {{--<a href="{{route('customerdelete',$value->id)}}" class="">Delete</a>--}}
                                 </td>
                             </tr>
                             @endforeach

@@ -5,10 +5,19 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Vehicle Edit</div>
+                <div class="card-header">Vehicle Edit <a  href="{{route('vehicleindex')}}" > < Back</a> </div>
                 <form action="{{route('vehicleupdate',$vehicle->id)}}" method="POST">
                     {{csrf_field()}}
                     <div class="card-body">
+                        <div class="col-md-12">
+                            <label>Company</label>
+                            <select name="customer_id" class="form-control" required>
+                                <option value="">Select Customers</option>
+                                @foreach($customers as $value)
+                                    <option value="{{$value->id}}" @if($value->id==$vehicle->customer_id) selected @endif >{{$value->company_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="col-md-12">
                             <label>Vehicle Number</label>
                             <input type="text" name="vehicle_no" class="form-control" value="{{$vehicle->vehicle_no}}" />

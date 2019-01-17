@@ -18,10 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
 </head>
 <body>
     <div id="app">
@@ -44,16 +40,13 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @if(Auth::check())
+                            
                             <li class="nav-item">
-                                <a id="" class="nav-link" href="{{route('customerindex')}}" >Customer</a>
+                                <a id="" class="nav-link" href="{{route('admin.usersindex')}}" >Users</a>
                             </li>
 
                             <li class="nav-item">
-                                <a id="" class="nav-link" href="{{route('vehicleindex')}}" >Vehicle</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a id="" class="nav-link" href="{{route('serviceindex')}}" >Service</a>
+                                <a id="" class="nav-link" href="{{route('admin.servicetypesindex')}}" >Service Types</a>
                             </li>
                                 
                             <li class="nav-item dropdown">

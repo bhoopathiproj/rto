@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypesOfServicesTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,15 @@ class CreateTypesOfServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('types_of_services', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('service_name');
-            $table->double('service_charge');
+            $table->integer('user_id');
+            $table->string('company_name');           
+            $table->string('customer_name');           
+            $table->string('email');           
+            $table->string('phone')->nullable();           
+            $table->string('mobile');           
+            $table->text('address');           
             $table->tinyInteger('status')->default(1)->comment('0-Inactive,1-Active');
             $table->timestamps();
         });
@@ -29,6 +34,6 @@ class CreateTypesOfServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('types_of_services');
+        Schema::dropIfExists('vehicle_companies');
     }
 }

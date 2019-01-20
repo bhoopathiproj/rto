@@ -3,18 +3,17 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-12">
+            <div class="card formBox">
                 <div class="card-header">
-                    Service Edit
-                    <a  href="{{route('serviceindex')}}" > < Back</a>
+                    <a  href="{{route('serviceindex')}}" class="bread_crum" > Service Management &nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>&nbsp; Edit
                 </div>
 
                 <form id="service_form" action="{{route('serviceupdate',$service->id)}}" method="POST">
                     {{csrf_field()}}
                     <div class="card-body">
                         
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>Service Type</label>
                             <select class="form-control" readonly>
                                 <option value="">Select Service</option>
@@ -24,12 +23,12 @@
                             </select>
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>Service Charge</label>
                             <input type="text" id="service_charge" value="{{$service->service_charge}}" class="form-control" readonly="">
                         </div>                       
 
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>Vehicle</label>
                             <select class="form-control" readonly>
                                 <option value="">Select Vehicle</option>
@@ -39,7 +38,7 @@
                             </select>
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>Term Period</label>
                             <select class="form-control" readonly>
                                 <option value="">Select Term</option>
@@ -51,44 +50,44 @@
                             </select>
                         </div>
                         
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>From Date</label>
                             <input type="text" value="{{date('d-m-Y',strtotime($service->from_date))}}" class="form-control" readonly="" />
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>To Date</label>
                             <input type="text" value="{{date('d-m-Y',strtotime($service->to_date))}}" class="form-control" readonly="" />
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>Amount</label>
                             <input type="text" id="service_amount" value="{{$service->service_amount}}" class="form-control" readonly="" />
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>Total</label>
                             <input type="text" id="total" value="{{$service->total}}" class="form-control" readonly />
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>Balance Need to Pay</label>
                             <input type="text" id="balance" value="{{$service->balance}}" class="form-control" readonly="" />
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>Paying Amount</label>
                             <input type="text" id="advance" name="advance" class="form-control" required="" onfocusout="mybalcalcfunc()"/>
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="form-group">
                             <label>Balance</label>
                             <input type="text" id="curr_balance" name="balance" class="form-control" required="" readonly="" />
                         </div>                      
 
-                        <div class="col-md-4"> 
-                            <br>                      
-                            <button type="button" class="btn btn-success" onclick="myfuncsubmit();" >Submit</button>
+                        <div class="form-group"> 
+                                                
+                            <button type="button" class="btn btn-primary themeBtn" onclick="myfuncsubmit();" >Update</button>
                         </div>
                     </div>
                 </form>

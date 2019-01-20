@@ -6,56 +6,76 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <span class="pull-left">Service History</span>
-                    <span class="pull-right"><a href="{{route('serviceindex')}}">< Back</a></span>
+                    <a href="{{route('serviceindex')}}" class="bread_crum">Service Management &nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>&nbsp; History
+                    
                 </div>
                 
                 <div class="card-body">
-                    <div class="col-md-4">
-                        <label>Service Type:</label>
-                        <span>{{$service->servicestype->service_name}}</span>
-                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="overViewBox">
+                                <label>Service Type:</label>
+                                <span>{{$service->servicestype->service_name}}</span>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                        <label>Service Charge:</label>
-                        <span>{{$service->service_charge}}</span>
-                    </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="overViewBox">
+                                <label>Status:</label>
+                                @if($service->status==0) <span style="color: Red;">Not Paid</span> @else <span style="color: Green;">Paid</span> @endif
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                        <label>Amount:</label>
-                        <span>{{$service->amount}}</span>
-                    </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="overViewBox">
+                                <label>Customer Name:</label>
+                                <span>{{$service->servicescustomer->customer_name}}</span>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                        <label>Total:</label>
-                        <span>{{$service->total}}</span>
-                    </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="overViewBox">
+                                <label>Service Charge:</label>
+                                <span>{{$service->service_charge}}</span>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                        <label>Customer Name:</label>
-                        <span>{{$service->servicescustomer->customer_name}}</span>
-                    </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="overViewBox">
+                                <label>Amount:</label>
+                                <span>{{$service->amount}}</span>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                        <label>From date:</label>
-                        <span>{{date('d-m-Y',strtotime($service->from_date))}}</span>
-                    </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="overViewBox">
+                                <label>Total:</label>
+                                <span>{{$service->total}}</span>
+                            </div>
+                        </div>
+                    
+                        <div class="col-sm-6 col-md-4">
+                            <div class="overViewBox">
+                                <label>From date:</label>
+                                <span>{{date('d-m-Y',strtotime($service->from_date))}}</span>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                        <label>To date:</label>
-                        <span>{{date('d-m-Y',strtotime($service->to_date))}}</span>
-                    </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="overViewBox">
+                                <label>To date:</label>
+                                <span>{{date('d-m-Y',strtotime($service->to_date))}}</span>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                        <label>Status:</label>
-                        @if($service->status==0) <span style="color: Red;">Not Paid</span> @else <span style="color: Green;">Paid</span> @endif
                     </div>
+                        
                 </div>
                 
                 <br>
 
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table datatableBx">
                         <thead>
                         <tr>
                             <th>S.No</th>          
@@ -83,4 +103,19 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+
+<script type="text/javascript">
+$.noConflict();
+
+    jQuery( document ).ready(function( $ ) {
+        $('.datatableBx').DataTable({
+            responsive: true,
+        });
+    });
+</script>
+
+
 @endsection

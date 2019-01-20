@@ -3,15 +3,17 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <span class="pull-left">Users Management</span>
-                    <span class="pull-right"><a href="{{route('admin.usersadd')}}">+ Add</a></span>
+                    <span class="pull-right">
+                        <a href="{{route('admin.usersadd')}}" class="themeBtn"><i class="fa fa-plus" aria-hidden="true"></i> Add</a>
+                    </span>
                 </div>
 
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table datatableBx">
                         <thead>
                         <tr>
                             <th>S.No</th>
@@ -45,4 +47,19 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+
+<script type="text/javascript">
+$.noConflict();
+
+    jQuery( document ).ready(function( $ ) {
+        $('.datatableBx').DataTable({
+            responsive: true,
+        });
+    });
+</script>
+
+
 @endsection

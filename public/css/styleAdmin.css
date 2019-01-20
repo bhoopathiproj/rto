@@ -1,0 +1,179 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+body{
+    color: #212529;
+    text-align: left;
+    background-color: #f8fafc;
+}
+html, body{
+    font-family: 'Roboto', sans-serif;
+}
+/*Datatable*/
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 10px 12px;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+/*Input*/
+
+.form-control {
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e0e3e5;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: rgba(71, 48, 217, 0.3);
+    outline: 0;
+    box-shadow: none;
+}
+
+
+/*Helper*/
+
+.dangerTxt{ color: #ff0000 !important; }
+
+
+
+
+/**********Login page************/
+.panel-default {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none;
+    border-radius: .25rem;
+    box-shadow: -2px 4px 15px rgba(4, 26, 45, 0.19);
+}
+.panel-default>.panel-heading {
+    color: #333;
+    border-color: #ddd;
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgb(255, 255, 255);
+    border-bottom: none;
+    text-align: center;
+    font-size: 22px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none;
+    border-radius: .25rem;
+    box-shadow: -2px 4px 15px rgba(4, 26, 45, 0.19);
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgb(247, 247, 247);
+    border-bottom: none;
+    text-align: left;
+    font-size: 18px;
+}
+.panel.panel-default.loginBox {
+    width: 100%;
+    max-width: 480px;
+    margin: 30px auto;
+        padding: 20px;
+}
+.panel.panel-default.loginBox .panel-heading {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgb(255, 255, 255);
+    border-bottom: none;
+    text-align: center;
+    font-size: 22px;
+}
+
+label.control-label {
+    display: inline-block;
+    margin-bottom: 0.2rem;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.form-group.f_width {
+    width: 100%;
+    float: left;
+}
+a.btn.btn-link.forgetPwd {
+    padding: 0;
+    font-size: 13px;
+}
+button.btn.btn-primary.loginBtn {
+    width: 100%;
+    outline: 0 !important;
+}
+.askQu{
+	font-size: 13px;
+    margin: 10px 0;
+}
+
+
+/*Customer*/
+a.icoBtn {
+    font-size: 13px;
+    padding: 5px;
+    color: #8b8b8b;
+}
+a.icoBtn:hover{
+    color: #4730d9;    
+}
+.themeBtn:hover,
+.themeBtn:focus,
+.themeBtn:active,
+.themeBtn{
+    font-size: 13px;
+    padding: 6px 20px;
+    background: #4730d9;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none !important;
+    box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.bread_crum{
+    font-size: 14px;
+    color: #9f9f9f;
+    text-decoration: none !important;
+}
+.formBox{
+    width: 100%;
+    max-width: 580px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+
+/*Services*/
+
+
+.overViewBox {
+    padding: 10px;
+    background: #f8fafc;
+    margin: 5px 0;
+    min-height: 70px;
+}
+
+
+.overViewBox label {
+    color: #696969;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 0;
+}
